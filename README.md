@@ -1,9 +1,4 @@
-<div align="center">
-  <h3>Manage and sync all your passwords and one-time-passwords on Linux</h3>
-  <a href="https://flolu.de/blog/linux-password-manager-and-sync">
-    <img width="600px" src="preview.gif" style="border-radius: 0.5rem;" />
-  </a>
-</div>
+# Manage and sync all your passwords and one-time-passwords on Linux
 
 ## Requirements
 
