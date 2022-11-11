@@ -5,19 +5,19 @@
 **Debian**
 
 ```bash
-apt install gnupg pass rofi pass-extension-otp zbar-tools
+apt install git gnupg pass rofi pass-extension-otp zbar-tools
 ```
 
 **Fedora**
 
 ```bash
-dnf install gnupg pass pass-otp rofi zbar
+dnf install git gnupg pass pass-otp rofi zbar
 ```
 
 **Arch**
 
 ```bash
-pacman -S gnupg pass pass-otp rofi zbar
+pacman -S git gnupg pass pass-otp rofi zbar
 ```
 
 ## Setup `pass`
@@ -29,16 +29,27 @@ pacman -S gnupg pass pass-otp rofi zbar
    gpg --full-gen-key
    ```
 
-2. Initialize password store
+2. Backup your GPG key
+
+   ```bash
+   # backup
+   gpg -o private.gpg --export-options backup --export-secret-keys <gpg_key_fingerprint>
+
+   # restore
+   gpg --import-options restore --import private.gpg
+   ```
+
+3. Initialize password store
 
    ```bash
    pass init <gpg_key_fingerprint>
+   pass git init
    ```
 
-3. Manage passwords
+4. Manage passwords
 
    ```bash
-   pass -h
+   pass help
    ```
 
 ## Setup `passmenu`
@@ -94,7 +105,7 @@ I recommend syncing your passwords through an encrypted Git repository. You can 
 3. Push changes
 
    ```bash
-   git push origin master
+   pass git push origin master
    ```
 
 4. Pull changes
